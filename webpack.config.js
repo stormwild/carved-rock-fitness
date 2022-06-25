@@ -1,6 +1,8 @@
 // src/index.js default configuration
 const path = require("path");
 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 let production = process.env.NODE_ENV === "production";
 
 let config = {
@@ -33,6 +35,11 @@ let config = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+    }),
+  ],
   resolve: {
     extensions: [".ts", ".js"],
   },

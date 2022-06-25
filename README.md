@@ -34,3 +34,9 @@ yarn add -D babel-loader @babel/core @babel/preset-env
 ```sh
 yarn add -D typescript ts-loader
 ```
+
+## Plugins
+
+```sh
+yarn add -D html-webpack-plugin
+```
