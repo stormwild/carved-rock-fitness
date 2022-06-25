@@ -28,3 +28,9 @@ yarn webpack --watch
 ```
 yarn add -D babel-loader @babel/core @babel/preset-env
 ```
+
+## Typescript
+
+```sh
+yarn add -D typescript ts-loader
+```
