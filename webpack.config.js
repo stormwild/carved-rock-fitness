@@ -6,13 +6,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 let production = process.env.NODE_ENV === "production";
 
 let config = {
-  entry: {
-    index: "./src/index",
-    home: "./src/home",
-  },
+  entry: ["./src/index", "./src/home"],
   output: {
-    filename: "[name].js",
+    filename: "main.js",
     path: path.resolve(__dirname, "dist"),
+    clean: true,
   },
   module: {
     rules: [
@@ -33,6 +31,11 @@ let config = {
           loader: "ts-loader",
         },
       },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ["style-loader", "css-loader"], // last is first
+      },
     ],
   },
   plugins: [
@@ -46,6 +49,8 @@ let config = {
   devtool: "inline-source-map",
   mode: "development",
   devServer: {
+    // liveReload: false,
+    watchFiles: ["src/**/*", "index.html"],
     static: "./dist",
   },
 };
