@@ -2,6 +2,7 @@
 const path = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 let production = process.env.NODE_ENV === "production";
 
@@ -34,7 +35,7 @@ let config = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: ["style-loader", "css-loader", "sass-loader"], // last is first
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"], // last is first
       },
     ],
   },
@@ -42,6 +43,7 @@ let config = {
     new HtmlWebpackPlugin({
       template: "./index.html",
     }),
+    new MiniCssExtractPlugin(),
   ],
   resolve: {
     extensions: [".ts", ".js"],
