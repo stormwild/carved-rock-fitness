@@ -4,9 +4,12 @@ const path = require("path");
 let production = process.env.NODE_ENV === "production";
 
 let config = {
-  entry: ["./src/index", "./src/home"],
+  entry: {
+    index: "./src/index",
+    home: "./src/home",
+  },
   output: {
-    filename: "main.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
   module: {
