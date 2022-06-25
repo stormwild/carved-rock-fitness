@@ -32,9 +32,9 @@ let config = {
         },
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         exclude: /node_modules/,
-        use: ["style-loader", "css-loader"], // last is first
+        use: ["style-loader", "css-loader", "sass-loader"], // last is first
       },
     ],
   },

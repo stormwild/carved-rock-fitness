@@ -1,5 +1,5 @@
 import util from "./util";
-import "./css/main.css";
+import "./css/main.scss";
 
 const cart = [];
 

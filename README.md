@@ -40,4 +40,5 @@ yarn add -D typescript ts-loader
 ```sh
 yarn add -D html-webpack-plugin
 yarn add -D css-loader style-loader
+yarn add -D sass-loader sass
 ```
