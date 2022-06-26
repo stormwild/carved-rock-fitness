@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const CopyPlugin = require("copy-webpack-plugin");
 // const BundleAnalyzerPlugin =
 //   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const HelloWorldPlugin = require("./hw-plugin/index");
 
 let production = process.env.NODE_ENV === "production";
 
@@ -31,10 +32,10 @@ let config = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        use: ["ts-loader", path.resolve("./gen-loader/index.js")],
-        // use: {
-        //   loader: "ts-loader",
-        // },
+        // use: ["ts-loader", path.resolve("./gen-loader/index.js")],
+        use: {
+          loader: "ts-loader",
+        },
       },
       {
         test: /\.html$/,
@@ -109,6 +110,7 @@ let config = {
     //   patterns: [{ from: "./src/images", to: "images" }],
     // }),
     // new BundleAnalyzerPlugin(),
+    new HelloWorldPlugin(),
   ],
   resolve: {
     extensions: [".ts", ".js"],
