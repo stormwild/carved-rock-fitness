@@ -2388,6 +2388,7 @@ __metadata:
     babel-loader: ^8.2.5
     copy-webpack-plugin: ^11.0.0
     css-loader: ^6.7.1
+    html-loader: ^3.1.2
     html-webpack-plugin: ^5.5.0
     mini-css-extract-plugin: ^2.6.1
     postcss: ^8.4.14
@@ -3573,6 +3574,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"html-loader@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "html-loader@npm:3.1.2"
+  dependencies:
+    html-minifier-terser: ^6.0.2
+    parse5: ^6.0.1
+  peerDependencies:
+    webpack: ^5.0.0
+  checksum: 75d665f118315056f24e248a6f0b6f6a3dbaec34593b9216af507d36eb24ca54cb8d80667a87ffc6a02b6b51c62423d59b4f64d827a745ac2e199d0c2b7c5c19
+  languageName: node
+  linkType: hard
+
 "html-minifier-terser@npm:^6.0.2":
   version: 6.1.0
   resolution: "html-minifier-terser@npm:6.1.0"
@@ -4681,6 +4694,13 @@ __metadata:
     json-parse-even-better-errors: ^2.3.0
     lines-and-columns: ^1.1.6
   checksum: 62085b17d64da57f40f6afc2ac1f4d95def18c4323577e1eced571db75d9ab59b297d1d10582920f84b15985cbfc6b6d450ccbf317644cfa176f3ed982ad87e2
+  languageName: node
+  linkType: hard
+
+"parse5@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "parse5@npm:6.0.1"
+  checksum: 7d569a176c5460897f7c8f3377eff640d54132b9be51ae8a8fa4979af940830b2b0c296ce75e5bd8f4041520aadde13170dbdec44889975f906098ea0002f4bd
   languageName: node
   linkType: hard
 

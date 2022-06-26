@@ -34,6 +34,13 @@ let config = {
         },
       },
       {
+        test: /\.html$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "html-loader",
+        },
+      },
+      {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
@@ -54,6 +61,13 @@ let config = {
         test: /\.txt$/,
         type: "asset/source",
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "images/[hash]-[name][ext]",
+        },
+      },
     ],
   },
   plugins: [
@@ -63,9 +77,9 @@ let config = {
     new MiniCssExtractPlugin({
       filename: "bundle.css",
     }),
-    new CopyPlugin({
-      patterns: [{ from: "./src/images", to: "images" }],
-    }),
+    // new CopyPlugin({
+    //   patterns: [{ from: "./src/images", to: "images" }],
+    // }),
   ],
   resolve: {
     extensions: [".ts", ".js"],
