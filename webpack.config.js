@@ -35,7 +35,19 @@ let config = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"], // last is first
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["postcss-preset-env", {}]],
+              },
+            },
+          },
+          "sass-loader",
+        ], // last is first
       },
     ],
   },
@@ -43,7 +55,9 @@ let config = {
     new HtmlWebpackPlugin({
       template: "./index.html",
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "bundle.css",
+    }),
   ],
   resolve: {
     extensions: [".ts", ".js"],

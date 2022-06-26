@@ -42,4 +42,5 @@ yarn add -D html-webpack-plugin
 yarn add -D css-loader style-loader
 yarn add -D sass-loader sass
 yarn add -D mini-css-extract-plugin
+yarn add -D postcss postcss-loader postcss-preset-env
 ```
