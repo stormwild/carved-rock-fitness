@@ -47,8 +47,58 @@ yarn add -D copy-webpack-plugin
 yarn add -D html-loader
 ```
 
-## Analyzers
+## Tools
+
+Webpack Tools
+
+### Analyzers
 
 ```sh
 yarn add -D webpack-bundle-analyzer
+```
+
+### Server Proxy
+
+```sh
+npm install -g json-server
+touch db.json
+vim db.json
+json-server --watch db.json
+```
+
+`// db.json`
+
+```json
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Joe"
+    },
+    {
+      "id": 2,
+      "name": "Jane"
+    },
+    {
+      "id": 3,
+      "name": "Oprah"
+    }
+  ]
+}
+```
+
+```js
+{
+  devServer: {
+    // liveReload: false,
+    watchFiles: ["src/**/*", "index.html"],
+    static: "./dist",
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000",
+        pathRewrite: { "^/api": "" },
+      },
+    },
+  },
+}
 ```
