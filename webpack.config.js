@@ -68,6 +68,19 @@ let config = {
           filename: "images/[hash]-[name][ext]",
         },
       },
+      // inline images if less than maxSize, otherwise extract/inlucde in build
+      // {
+      //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
+      //   type: "asset",
+      //   parser: {
+      //     dataUrlCondition: {
+      //       maxSize: 50 * 1024,
+      //     },
+      //   },
+      //   generator: {
+      //     filename: "images/[hash][name][ext]",
+      //   },
+      // },
       // inlining images will result in embedded base64 encoded image
       // as the value of the img src
       // src="data:image/png;base64,dsahdkashdaskjd/dsadasdahsk+"
