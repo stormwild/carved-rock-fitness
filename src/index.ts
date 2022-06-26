@@ -1,5 +1,8 @@
 import util from "./util";
 import "./css/main.scss";
+import msg from "./message.txt";
+
+console.log(msg);
 
 const cart = [];
 

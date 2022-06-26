@@ -50,6 +50,10 @@ let config = {
           "sass-loader",
         ], // last is first
       },
+      {
+        test: /\.txt$/,
+        type: "asset/source",
+      },
     ],
   },
   plugins: [
