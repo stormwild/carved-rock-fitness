@@ -102,3 +102,6 @@ json-server --watch db.json
   },
 }
 ```
+
+## Custom Loader
+

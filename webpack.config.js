@@ -4,8 +4,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const CopyPlugin = require("copy-webpack-plugin");
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin =
+//   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 let production = process.env.NODE_ENV === "production";
 
@@ -31,9 +31,10 @@ let config = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        use: {
-          loader: "ts-loader",
-        },
+        use: ["ts-loader", path.resolve("./gen-loader/index.js")],
+        // use: {
+        //   loader: "ts-loader",
+        // },
       },
       {
         test: /\.html$/,
@@ -107,7 +108,7 @@ let config = {
     // new CopyPlugin({
     //   patterns: [{ from: "./src/images", to: "images" }],
     // }),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
   resolve: {
     extensions: [".ts", ".js"],
