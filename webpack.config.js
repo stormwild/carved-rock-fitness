@@ -3,7 +3,9 @@ const path = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
+// const CopyPlugin = require("copy-webpack-plugin");
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 let production = process.env.NODE_ENV === "production";
 
@@ -68,6 +70,7 @@ let config = {
           filename: "images/[hash]-[name][ext]",
         },
       },
+
       // inline images if less than maxSize, otherwise extract/inlucde in build
       // {
       //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -81,6 +84,7 @@ let config = {
       //     filename: "images/[hash][name][ext]",
       //   },
       // },
+
       // inlining images will result in embedded base64 encoded image
       // as the value of the img src
       // src="data:image/png;base64,dsahdkashdaskjd/dsadasdahsk+"
@@ -103,6 +107,7 @@ let config = {
     // new CopyPlugin({
     //   patterns: [{ from: "./src/images", to: "images" }],
     // }),
+    new BundleAnalyzerPlugin(),
   ],
   resolve: {
     extensions: [".ts", ".js"],

@@ -46,3 +46,9 @@ yarn add -D postcss postcss-loader postcss-preset-env
 yarn add -D copy-webpack-plugin
 yarn add -D html-loader
 ```
+
+## Analyzers
+
+```sh
+yarn add -D webpack-bundle-analyzer
+```
